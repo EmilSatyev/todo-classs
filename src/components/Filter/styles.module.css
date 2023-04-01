@@ -1,0 +1,41 @@
+.Filter {
+    display: flex;
+    gap: 10px;
+}
+
+.Filter__btn {
+    background-color: #3e79b0;
+    color: #ffffff;
+    padding: 8px 16px;
+    font-size: 12px;
+    border-radius: 15px;
+    font-family: Montserrat, serif;
+    opacity: .3;
+    transition: opacity .2s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+
+}
+
+.Filter__btn span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(93 141 186);
+    width: 15px;
+    height: 15px;
+    font-size: 8px;
+    line-height: 0;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.Filter__active, .Filter__btn:hover {
+    opacity: 1;
+}
+
+.Filter__active {
+    pointer-events: none;
+}

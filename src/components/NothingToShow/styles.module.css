@@ -1,0 +1,27 @@
+.NothingToShow {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.NothingToShow span {
+    font-size: 53px;
+}
+.NothingToShow p {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.NothingToShow p button {
+    height: 25px;
+    width: 25px;
+    color: inherit;
+}
+
+@media (max-width: 580px) {
+    .NothingToShow h1 {
+        font-size: 23px;
+    }
+}

@@ -1,0 +1,52 @@
+.Modal {
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(7, 8, 45, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.Modal__content {
+  padding: 50px 60px 45px;
+  background-color: white;
+  border-radius: 16px;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.Modal__active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.Modal__text {
+  font-size: 22px;
+  font-weight: bold;
+  color: #000;
+}
+
+.Modal__btn {
+  margin-top: 10px;
+  background-color: #3e79b0;
+  color: #ffffff;
+  padding: 12px 40px;
+  border-radius: 15px;
+  font-family: Montserrat, serif;
+  font-weight: 600;
+  max-width: 190px;
+}
+
+.Modal__footer {
+  margin-top: 20px;
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+}

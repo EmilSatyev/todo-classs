@@ -1,0 +1,21 @@
+.AddBtn {
+    width: 40px;
+    height: 40px;
+    color: rgba(255, 255, 255, .3);
+    transition: .2s;
+}
+
+.AddBtn:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+.AddBtn svg {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.AddBtn__open {
+    transform: rotate(45deg);
+}

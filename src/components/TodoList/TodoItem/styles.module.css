@@ -1,0 +1,79 @@
+.TodoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  position: relative;
+  background-color: #43446a;
+  padding: 16px 18px 22px;
+  border-radius: 15px;
+}
+
+.TodoItem p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+.TodoItem__customCheckbox {
+  cursor: pointer;
+  color: white;
+}
+
+.TodoItem__customCheckbox svg {
+  width: 25px;
+  height: 25px;
+}
+
+.TodoItem__content {
+  width: 100%;
+  min-width: 220px;
+}
+
+.TodoItem__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.TodoItem__header h3 {
+  margin-bottom: 6px;
+  word-wrap: break-word;
+  min-width: 0;
+  flex: 1;
+}
+
+.TodoItem__btns {
+  display: flex;
+  gap: 5px;
+}
+
+.TodoItem__btns button {
+  width: 30px;
+  flex-shrink: 0;
+}
+
+.TodoItem__edit {
+  color: #92beac;
+}
+
+.TodoItem__edit:hover {
+  color: #19db8e;
+}
+
+.TodoItem__delete {
+  color: #de6276;
+}
+
+.TodoItem__delete:hover {
+  color: #db3b50;
+}
+
+.TodoItem__zip {
+  color: #afaa52;
+}
+
+.TodoItem__zip:hover {
+  color: #dbea0f;
+}
