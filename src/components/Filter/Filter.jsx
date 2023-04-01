@@ -21,7 +21,7 @@ export class Filter extends Component {
         </button>
         <button
           className={`${styles.Filter__btn} ${
-            filterBy === "checked" ? styles.active : ""
+            filterBy === "checked" ? styles.Filter__active : ""
           }`}
           name="checked"
           onClick={filterHandler}
@@ -30,7 +30,7 @@ export class Filter extends Component {
         </button>
         <button
           className={`${styles.Filter__btn} ${
-            filterBy === "archived" ? styles.active : ""
+            filterBy === "archived" ? styles.Filter__active : ""
           }`}
           name="archived"
           onClick={filterHandler}
