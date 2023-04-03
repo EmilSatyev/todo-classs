@@ -1,12 +1,12 @@
 .AddBtn {
     width: 40px;
     height: 40px;
-    color: rgba(255, 255, 255, .3);
+    color: rgba(var(--text-color), 0.3);
     transition: .2s;
 }
 
 .AddBtn:hover {
-    color: rgba(255, 255, 255, 1);
+    color: rgb(var(--text-color));
 }
 
 .AddBtn svg {

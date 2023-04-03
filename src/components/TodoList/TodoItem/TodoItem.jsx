@@ -46,7 +46,7 @@ export class TodoItem extends Component {
 
     if (isEdit) {
       return (
-        <li className={styles.root}>
+        <li className={styles.TodoItem}>
           <Form
             mode="editing"
             formData={{ id, title, desc }}
@@ -94,7 +94,7 @@ export class TodoItem extends Component {
               </button>
             </div>
           </div>
-          <p>{desc}</p>
+          {desc && <p>{desc}</p>}
         </div>
         {modal}
       </li>

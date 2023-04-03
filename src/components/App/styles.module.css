@@ -1,55 +1,73 @@
+.light {
+    --bg-color: 236, 245, 255;
+    --app-bg-color: 255, 255, 255;
+    --text-color: 49, 49, 92;
+    --hr-color: 197, 214, 231;
+}
+
+.dark {
+    --bg-color: 126, 192, 235;
+    --app-bg-color: 49, 49, 92;
+    --text-color: 255, 255, 255;
+    --hr-color: 67, 68, 106;
+}
+
 .App {
-  padding: 20px;
-  min-width: 400px;
+    padding: 20px;
+    min-width: 400px;
+    background-color: rgb(var(--bg-color));
+    min-height: 100vh;
+    color: rgb(var(--text-color));
 }
 
 .App__wrap {
-  max-width: 870px;
-  margin: 100px auto;
-  padding: 23px 35px 50px;
-  min-height: 500px;
-  border-radius: 16px;
-  box-shadow: 0 5px 53px 2px rgba(34, 60, 80, 0.4);
-  display: flex;
-  flex-direction: column;
-  background-color: #31315c;
+    max-width: 870px;
+    margin: 100px auto;
+    padding: 23px 35px 50px;
+    min-height: 500px;
+    border-radius: 16px;
+    box-shadow: 0 5px 53px 2px rgba(34, 60, 80, 0.4);
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(var(--app-bg-color));
 }
 
 .App__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 10px;
-  height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    height: 60px;
+    gap: 10px;
 }
 
 .App__hr {
-  height: 1px;
-  width: 100%;
-  background-color: #43446a;
-  margin-bottom: 20px;
+    height: 1px;
+    width: 100%;
+    background-color: rgb(var(--hr-color));
+    margin-bottom: 20px;
 }
 
 .App__filterSearch {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-  gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 20px;
 }
 
 @media (max-width: 500px) {
-  .App__wrap {
-    padding: 15px 20px 30px;
-  }
+    .App__wrap {
+        padding: 15px 20px 30px;
+    }
 }
 
 @media (max-width: 760px) {
-  .App__wrap {
-    margin: 30px auto;
-  }
+    .App__wrap {
+        margin: 50px auto;
+    }
 
-  .App__filterSearch {
-    flex-direction: column;
-  }
+    .App__filterSearch {
+        flex-direction: column;
+    }
 }

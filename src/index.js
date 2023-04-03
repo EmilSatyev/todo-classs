@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { App } from "./components";
-import { StoreContext } from "./store/store";
+import { MyStore } from "./store/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <StoreContext>
+  <MyStore>
     <App />
-  </StoreContext>
+  </MyStore>
 );

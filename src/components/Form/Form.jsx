@@ -1,7 +1,7 @@
-import { Component } from "react";
+import {Component} from "react";
 import styles from "./styles.module.css";
-import { MyContext } from "../../store/store";
-import { SvgSelector } from "../SvgSelector";
+import {MyContext} from "../../store/store";
+import {SvgSelector} from "../SvgSelector";
 
 export class Form extends Component {
   static contextType = MyContext;
@@ -34,16 +34,16 @@ export class Form extends Component {
       isError: false,
     });
 
-    const { addTodo, toggleAddingForm, editTodo } = this.context;
-    const { formData, isEditing } = this.state;
-    const { title, desc } = formData;
+    const {addTodo, toggleAddingForm, editTodo} = this.context;
+    const {formData, isEditing} = this.state;
+    const {title, desc} = formData;
 
-    if (!title.trim() || !desc.trim()) {
+    if (title.trim().length < 3) {
       this.setState({
         isError: true,
         formData: {
           id: this.props.formData?.id || null,
-          title: title.trim(),
+          title: "",
           desc: desc.trim(),
         },
       });
@@ -70,8 +70,8 @@ export class Form extends Component {
   };
 
   render() {
-    const { formData, isError, isEditing } = this.state;
-    const { title, desc } = formData;
+    const {formData, isError, isEditing} = this.state;
+    const {title, desc} = formData;
 
     return (
       <form
@@ -79,19 +79,20 @@ export class Form extends Component {
         className={`${styles.Form} ${isEditing ? styles.Form__editMode : ""}`}
       >
         <input
-          placeholder="Введите заголовок"
+          placeholder={
+            isError ? "Я верю ты можешь больше" : "Введите заголовок"
+          }
           type="text"
           name="title"
           value={title}
           onChange={this.changeHandler}
-          className={isError && !title.trim() ? styles.Form__error : ""}
+          className={isError ? styles.Form__error : ""}
         />
         <textarea
           placeholder="Введите описание"
           name="desc"
           value={desc}
           onChange={this.changeHandler}
-          className={isError && !desc.trim() ? styles.Form__error : ""}
         />
         {isEditing ? (
           <div className={styles.Form__btns}>
@@ -99,13 +100,13 @@ export class Form extends Component {
               onClick={this.submitHandler}
               className={styles.Form__confirm}
             >
-              <SvgSelector name="check" />
+              <SvgSelector name="check"/>
             </button>
             <button
               onClick={this.cancelHandler}
               className={styles.Form__cancel}
             >
-              <SvgSelector name="cross" />
+              <SvgSelector name="cross"/>
             </button>
           </div>
         ) : (

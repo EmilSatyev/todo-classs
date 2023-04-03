@@ -1,6 +1,5 @@
 import styles from "./styles.module.css";
 import { TodoItem } from "./TodoItem";
-
 import { Component } from "react";
 import { MyContext } from "../../store/store";
 import { NothingToShow } from "../NothingToShow";
@@ -22,7 +21,7 @@ export const filterTodos = (todos, filterBy, searchValue = "") => {
   return todos;
 };
 
-class TodoList extends Component {
+export class TodoList extends Component {
   static contextType = MyContext;
 
   render() {
@@ -53,5 +52,3 @@ class TodoList extends Component {
     );
   }
 }
-
-export default TodoList;

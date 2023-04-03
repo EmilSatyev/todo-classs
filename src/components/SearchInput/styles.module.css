@@ -2,10 +2,10 @@
 .searchInput input {
     padding: 12px 20px;
     font-size: 16px;
-    background-color: #272851;
+    background-color: rgb(var(--hr-color));
     max-width: 250px;
     font-family: Montserrat, serif;
-    color: #ffffff;
+    color: rgb(var(--text-color));
     border-radius: 15px;
 }
 

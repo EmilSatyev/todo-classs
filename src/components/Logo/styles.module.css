@@ -1,4 +1,5 @@
 .Logo {
-    color: #ffffff;
+    color: var(--text-color);
     height: 33px;
+    flex-grow: 1;
 }

@@ -1,27 +1,21 @@
-import { Component } from "react";
+import { Component, createRef } from "react";
 import styles from "./styles.module.css";
 import { MyContext } from "../../store/store";
 
 export class SearchInput extends Component {
   static contextType = MyContext;
+  timer = null;
+  searchInputRef = createRef();
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      searchVal: "",
-    };
-  }
-
-  setSearchVal = (e) => {
-    this.setState({
-      searchVal: e.target.value,
-    });
-
-    this.context.setSearchValue(e.target.value);
+  setSearchVal = () => {
+    const value = this.searchInputRef.current.value;
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
+      this.context.setSearchValue(value);
+    }, 500);
   };
 
   render() {
-    const { searchVal } = this.state;
     return (
       <form
         onSubmit={(e) => {
@@ -30,8 +24,8 @@ export class SearchInput extends Component {
         className={styles.searchInput}
       >
         <input
+          ref={this.searchInputRef}
           onChange={this.setSearchVal}
-          value={searchVal}
           type="search"
           placeholder="Найти..."
         />

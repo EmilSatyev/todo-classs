@@ -1,13 +1,14 @@
-import React, { Component } from "react";
+import {Component, createContext} from "react";
 
-const MyContext = React.createContext(null);
+const MyContext = createContext(null);
 
-class StoreContext extends Component {
+class MyStore extends Component {
   state = {
     isShowAddingForm: false,
     isCheckedFilter: false,
+    theme: localStorage.getItem("theme") || "light",
     filterBy: "all",
-    todos: JSON.parse(localStorage.getItem("todos") || '[]'),
+    todos: JSON.parse(localStorage.getItem("todos") || "[]"),
     searchValue: null,
   };
 
@@ -45,7 +46,6 @@ class StoreContext extends Component {
       });
       return false;
     }
-
     localStorage.setItem("todos", JSON.stringify(filteredTodos));
     this.setState({
       todos: filteredTodos,
@@ -94,6 +94,14 @@ class StoreContext extends Component {
     });
   };
 
+  toggleTheme = () => {
+    let theme = this.state.theme === "light" ? "dark" : "light";
+    this.setState({
+      theme,
+    });
+    localStorage.setItem("theme", theme);
+  };
+
   render() {
     return (
       <MyContext.Provider
@@ -115,6 +123,9 @@ class StoreContext extends Component {
           setSearchValue: this.setSearchValue,
 
           filterBy: this.state.filterBy,
+
+          theme: this.state.theme,
+          toggleTheme: this.toggleTheme,
         }}
       >
         {this.props.children}
@@ -123,4 +134,4 @@ class StoreContext extends Component {
   }
 }
 
-export { StoreContext, MyContext };
+export { MyStore, MyContext };
