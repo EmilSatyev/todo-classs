@@ -5,17 +5,17 @@
     border: 0;
     background-color: unset;
 }
-
 ul {
     list-style: none;
 }
-
 button {
     cursor: pointer;
 }
 
 body {
     font-family: Montserrat, serif;
+    background-color: #7ec0eb;
+    color: #ffffff;
     overflow-y: scroll;
 }
 
